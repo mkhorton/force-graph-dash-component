@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
-import MyExampleComponent from './components/MyExampleComponent.react';
+import ForceGraphComponent from './components/ForceGraphComponent.react';
 
 export {
-    MyExampleComponent
+    ForceGraphComponent
 };

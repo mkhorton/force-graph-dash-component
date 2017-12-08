@@ -1,8 +1,8 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import MyExampleComponent from '../MyExampleComponent.react';
+import MyExampleComponent from '../ForceGraphComponent.react';
 
-describe('MyExampleComponent', () => {
+describe('ForceGraphComponent', () => {
 
     it('renders', () => {
         const component = shallow(<MyExampleComponent label="Test label"

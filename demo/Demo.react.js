@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {MyExampleComponent} from '../src';
+import {ForceGraphComponent} from '../src';
 
 class Demo extends Component {
     constructor() {
@@ -15,8 +15,8 @@ class Demo extends Component {
                 <h1>force-graph Demo</h1>
 
                 <hr/>
-                <h2>MyExampleComponent</h2>
-                <MyExampleComponent
+                <h2>ForceGraphComponent</h2>
+                <ForceGraphComponent
                     label="This is an example label"
                     value={this.state.value}
                     setProps={newProps => this.setState({value: newProps.value})}

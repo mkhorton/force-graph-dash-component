@@ -9,7 +9,7 @@ import { InteractiveForceGraph, ForceGraphNode, ForceGraphLink } from 'react-vis
  * It renders an input with the property `value`
  * which is editable by the user.
  */
-export default class MyExampleComponent extends Component {
+export default class ForceGraphComponent extends Component {
     render() {
         const {id, label, setProps, value, graphData = '{"nodes":[], "links":[]}'} = this.props;
 
@@ -64,22 +64,6 @@ export default class MyExampleComponent extends Component {
                     }}
                     >
 
-                          <ForceGraphNode node={{ id: 'first-node', label: 'First node' }} fill="red" />
-                          <ForceGraphNode node={{ id: 'second-node', label: 'Second node' }} fill="blue" />
-                          <ForceGraphNode node={{ id: 'third-node', label: 'Second node' }} fill="blue" />
-                          <ForceGraphNode node={{ id: 'fourth-node', label: 'Second node' }} fill="blue" />
-                          <ForceGraphNode node={{ id: 'fifth-node', label: 'Second node' }} fill="blue" />
-                          <ForceGraphNode node={{ id: 'sixth-node', label: 'Second node' }} fill="blue" />
-
-                          <ForceGraphLink link={{ source: 'first-node', target: 'second-node' }} />
-                          <ForceGraphLink link={{ source: 'second-node', target: 'third-node' }} />
-                          <ForceGraphLink link={{ source: 'third-node', target: 'first-node' }} />
-                          <ForceGraphLink link={{ source: 'fourth-node', target: 'first-node' }} />
-                          <ForceGraphLink link={{ source: 'fourth-node', target: 'second-node' }} />
-                          <ForceGraphLink link={{ source: 'fourth-node', target: 'sixth-node' }} />
-                          <ForceGraphLink link={{ source: 'fifth-node', target: 'first-node' }} />
-                          <ForceGraphLink link={{ source: 'fifth-node', target: 'sixth-node' }} />
-
                           {nodesList}
                           {linksList}
 
@@ -90,7 +74,7 @@ export default class MyExampleComponent extends Component {
     }
 }
 
-MyExampleComponent.propTypes = {
+ForceGraphComponent.propTypes = {
     /**
      * The ID used to identify this compnent in Dash callbacks
      */
@@ -102,10 +86,15 @@ MyExampleComponent.propTypes = {
     label: PropTypes.string.isRequired,
 
     /**
-     * The value displayed in the input
+     * Will return information on selected node
      */
     value: PropTypes.string,
 
+    /**
+     * Takes a {'node': {}, 'links': {}} object encoded as a string
+     * (not sure why we need to encode this as a string, but
+     *  propTypes.Object didn't seem to work)
+     */
     graphData: PropTypes.string,
 
     /**
