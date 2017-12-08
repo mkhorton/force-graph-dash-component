@@ -23,31 +23,19 @@ export default class ForceGraphComponent extends Component {
 
         var linksList = graphDataParsed.links.map(function(item, index){
           //return <div key={index}>{item.id} {item.label} {item.fill}</div>
-          var link = {source: item.source, target: item.target}
+          var link = {source: item.source, target: item.target value: item.value}
           return (<ForceGraphLink key={index} link={link} />);
         })
 
         return (
             <div id={id}>
-                MyExampleComponent: {label}
-                <input
-                    value={value}
-                    onChange={e => {
-                        /*
-                         * Send the new value to the parent component.
-                         * In a Dash app, this will send the data back to the
-                         * Python Dash app server.
-                         */
-                         if (setProps) {
-                             setProps({
-                                value: e.target.value
-                            });
-                         }
-                    }}
-                />
+
+                <div style="visibility: hidden; display:inline;">
+                ForceGraphComponent: {label} {value}
+                </div>
 
                 <InteractiveForceGraph
-                    simulationOptions={{ height: 300, width: 300, animate: true }}
+                    simulationOptions={{ height: 300, width: 600, animate: true }}
                     labelAttr="label"
                     highlightDependencies
                     onSelectNode={(event, node) => {
