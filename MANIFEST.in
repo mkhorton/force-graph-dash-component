@@ -1,0 +1,5 @@
+include force_graph/bundle.js
+include force_graph/bundle.js.map
+include force_graph/metadata.json
+include README.md
+include LICENSE.md
